@@ -13,8 +13,13 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      msg: 'Hello Component.',
+      msg: 'Hello',
     };
+    let timer = setInterval(() => {
+      this.setState((state) => ({
+        msg: state.msg + "!"
+      }));
+    }, 10000);
   }
   render() {
     return <div>
